@@ -52,12 +52,17 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.9.8</version>
         </dependency>
-        <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf &ndash;&gt;-->
+        <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf-spring5 &ndash;&gt;-->
         <!--<dependency>-->
             <!--<groupId>org.thymeleaf</groupId>-->
-            <!--<artifactId>thymeleaf</artifactId>-->
+            <!--<artifactId>thymeleaf-spring5</artifactId>-->
             <!--<version>3.0.11.RELEASE</version>-->
         <!--</dependency>-->
+        <!-- Spring Integrate thymeleaf -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
