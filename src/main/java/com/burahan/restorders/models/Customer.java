@@ -18,6 +18,10 @@ public class Customer
 
     private String custcity;
 
+    private String workingarea;
+
+    private String custcountry;
+
     private String grade;
 
     private double openingamt;
@@ -33,7 +37,7 @@ public class Customer
     @ManyToOne
     @JoinColumn(name = "agentcode", nullable = false)
     @JsonIgnore
-    private long agentcode;
+    private Agents agent;
 
     public Customer()
     {
@@ -62,6 +66,26 @@ public class Customer
     public void setCustcity(String custcity)
     {
         this.custcity = custcity;
+    }
+
+    public String getWorkingarea()
+    {
+        return workingarea;
+    }
+
+    public void setWorkingarea(String workingarea)
+    {
+        this.workingarea = workingarea;
+    }
+
+    public String getCustcountry()
+    {
+        return custcountry;
+    }
+
+    public void setCustcountry(String custcountry)
+    {
+        this.custcountry = custcountry;
     }
 
     public String getGrade()
@@ -124,13 +148,13 @@ public class Customer
         this.phone = phone;
     }
 
-    public long getAgentcode()
+    public Agents getAgent()
     {
-        return agentcode;
+        return agent;
     }
 
-    public void setAgentcode(long agentcode)
+    public void setAgent(Agents agent)
     {
-        this.agentcode = agentcode;
+        this.agent = agent;
     }
 }

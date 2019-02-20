@@ -18,14 +18,14 @@ public class Orders
     private double advanceamount;
 
     @ManyToOne
-    @JoinColumn(name="customer", nullable = false)
+    @JoinColumn(name="custcode", nullable = false)
     @JsonIgnore
-    private long custcode;
+    private Customer customer;
 
     @ManyToOne
-    @JoinColumn(name="agents", nullable = false)
+    @JoinColumn(name="agentcode", nullable = false)
     @JsonIgnore
-    private long agentcode;
+    private Agents agent;
 
     private String orddescription;
 
@@ -58,24 +58,24 @@ public class Orders
         this.advanceamount = advanceamount;
     }
 
-    public long getCustcode()
+    public Customer getCustomer()
     {
-        return custcode;
+        return customer;
     }
 
-    public void setCustcode(long custcode)
+    public void setCustomer(Customer customer)
     {
-        this.custcode = custcode;
+        this.customer = customer;
     }
 
-    public long getAgentcode()
+    public Agents getAgent()
     {
-        return agentcode;
+        return agent;
     }
 
-    public void setAgentcode(long agentcode)
+    public void setAgent(Agents agent)
     {
-        this.agentcode = agentcode;
+        this.agent = agent;
     }
 
     public String getOrddescription()
