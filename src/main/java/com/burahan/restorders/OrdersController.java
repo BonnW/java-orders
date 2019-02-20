@@ -30,4 +30,10 @@ public class OrdersController
     {
         return custRepo.findAll();
     }
+
+    @GetMapping("/customer/order")
+    public List<Object[]> getCustomerOrders()
+    {
+        return custRepo.getCustomerOrders();
+    }
 }
