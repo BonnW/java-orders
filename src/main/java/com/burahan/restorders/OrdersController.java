@@ -64,4 +64,13 @@ public class OrdersController
     {
         return agentRepo.findAgentsWithOrders();
     }
+
+    @GetMapping("/customer/{custcode}")
+    public Customer deleteCustomer(@PathVariable long id)
+    {
+        var foundCust = custRepo.findById(id);
+        custRepo.deleteById(id);
+
+        return foundCust.get();
+    }
 }

@@ -11,6 +11,7 @@ public interface AgentRepository extends JpaRepository<Agents, Long>
     @Query(value = "SELECT a.agentcode, a.agentname, c.custname FROM agents a JOIN customer c WHERE a.agentcode = c.agentcode", nativeQuery = true)
     List<Object[]> findAllAgentsWithCustomers();
 
+    // NOT TESTED
     @Query(value = "SELECT a.agentname, o.ordnum, o.orddescription FROM agents a JOIN orders o WHERE a.agentcode = o.agentcode", nativeQuery = true)
     List<Object[]> findAgentsWithOrders();
 }
