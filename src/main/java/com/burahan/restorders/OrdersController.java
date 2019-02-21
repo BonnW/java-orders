@@ -42,8 +42,20 @@ public class OrdersController
     public List<Object[]> getOrdersFromCustomer(@PathVariable String name)
     {
         // Loop through twice seperately route?
-        List<Object[]> customerid = custRepo.getIdWithName(name);
+//        List<Object[]> customerid = custRepo.getIdWithName(name);
 
-        return custRepo.getOrdersFromCustomer(name);
+        return custRepo.getOrdersForCustomer(name);
+    }
+
+    @GetMapping("/customer/order/{custcode}")
+    public List<Object[]> getOrdersByCustId(@PathVariable long id)
+    {
+        return orderRepo.getOrdersByCustId(id);
+    }
+
+    @GetMapping("/agents")
+    public List<Object[]> getAgents()
+    {
+        return agentRepo.findAllAgentsWithCustomers();
     }
 }
