@@ -10,6 +10,6 @@ import java.util.List;
 public interface OrdersRepository extends JpaRepository<Orders, Long>
 {
     // Works in sqlitestudio. Trying out string concat method
-    @Query(value = "SELECT * FROM orders WHERE custcode = " + id, nativeQuery = true)
+    @Query(value = "SELECT * FROM orders WHERE custcode = :id", nativeQuery = true)
     List<Object[]> getOrdersByCustId(@Param("id") long id);
 }

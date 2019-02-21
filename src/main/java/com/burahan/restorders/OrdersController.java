@@ -58,4 +58,10 @@ public class OrdersController
     {
         return agentRepo.findAllAgentsWithCustomers();
     }
+
+    @GetMapping("/agents/orders")
+    public List<Object[]> findAgentsWithOrders()
+    {
+        return agentRepo.findAgentsWithOrders();
+    }
 }
